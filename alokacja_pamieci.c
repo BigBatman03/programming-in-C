@@ -133,8 +133,8 @@ int main()
 
     printf("\nPo modyfikacjach:\n");
     wypiszWszystkieKontakty();
+    freeMemory();
 }
-
 
 //zad2------------------------------------------------------------------------------------
 
