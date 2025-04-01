@@ -14,7 +14,7 @@ int extract_digits(const char* line) {
             last = line[i];
         }
     }
-    return first && last ? (first - '0') * 10 + (last - '0') : 0;
+    return  (first - '0') * 10 + (last - '0');
 }
 
 int starts_with_number_word(const char* line, int* value) {
@@ -66,7 +66,7 @@ int read_file(const char* filename, char*** lines) {
 
     while (fgets(buffer, sizeof(buffer), file)) {
         if (count >= capacity) {
-            capacity *= 2;
+            capacity += 1;
             *lines = realloc(*lines, capacity * sizeof(char*));
         }
         buffer[strcspn(buffer, "\n")] = '\0';
